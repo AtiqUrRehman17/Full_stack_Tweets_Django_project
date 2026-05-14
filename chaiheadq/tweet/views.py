@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Tweet
-from forms import TweetForm
+from .forms import TweetForm
 from django.shortcuts import get_object_or_404,redirect
 
 # Create your views here.
@@ -23,7 +23,7 @@ def tweet_create(request):
             return redirect('tweet_list')
     else:
         form = TweetForm()
-    return render(request,'tweet_from.html',{'form':form})
+    return render(request,'tweet_form.html',{'form':form})
 
 # edit tweet
 def tweet_edit(request,tweet_id):
@@ -38,7 +38,7 @@ def tweet_edit(request,tweet_id):
 
     else:
         form = TweetForm(instance=tweet)
-    return render(request,'tweet_from.html',{'form':form})
+    return render(request,'tweet_form.html',{'form':form})
 
 
 # deleting tweet
