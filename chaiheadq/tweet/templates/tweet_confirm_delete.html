@@ -6,6 +6,13 @@ Django Project Tweet Samartan Technologies
 
 {% block content %}
 
-<h1 class="text-center mt-2">Welcome To Django Tweet Project Samaritan Technologies</h1>
+<h1 class="text-center mt-2">Are You Sure to Delete the Tweet?</h1>
 
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">
+        Delete
+    </button>
+    <a class="btn btn-success" href="{% url 'tweet_list' %}">Cancel</a>
+</form>
 {% endblock %}
